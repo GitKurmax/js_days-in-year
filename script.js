@@ -3,7 +3,7 @@ function daysInYear(year) {
     if(!daysAmountInYear(year)) {
       throw new TypeError("exeption");
     } 
-      return daysAmountInYear(year));
+      return daysAmountInYear(year);
     } catch (error) {
       return error.message;
     }
@@ -14,7 +14,7 @@ function daysAmountInYear(year) {
     if (year > 0) {
       const thisYearEnd = new Date(year + 1, 0, 1);
       const thisYearstart = new Date(year, 0, 1);
-      const daysAmount = (thisYearEnd - thisYearstart)/(3600000*24);
+      const daysAmount = (thisYearEnd.getTime() - thisYearstart.getTime())/(3600000*24);
       return daysAmount;
     }
   }
